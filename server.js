@@ -16,6 +16,13 @@ mongoose.connect(process.env.MONGODB_URI)
 const articleRoutes = require('./routes/articleRoutes');
 app.use('/api/articles', articleRoutes);
 
+// for itertion of user
+const userInteractionRoutes = require('./routes/userInteractionRoutes');
+app.use('/api/interactions', userInteractionRoutes);
+
+
+
+
 const PORT = process.env.PORT || 5000 ;
 app.listen(PORT, () =>
     console.log(`Server started on port ${PORT}`));
